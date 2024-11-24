@@ -1,5 +1,4 @@
 import { fileURLToPath, URL } from 'node:url'
-
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 
@@ -17,9 +16,8 @@ export default defineConfig({
     preprocessorOptions: {
       scss: {
         additionalData: `
-              @import "@/presentation/assets/scss/_main.scss";
-              @import "@/presentation/assets/scss/_variables.scss";
-            `
+          @use "@/presentation/assets/scss/_main.scss" as *;
+        `
       }
     }
   }
