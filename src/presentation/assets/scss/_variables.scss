@@ -1,1 +1,71 @@
-$color-primary: #007bff;
+// colors
+$PRIMARY: #08b4a2;
+$SECONDARY: #67da1a;
+$INFO: #bdd3b6;
+$SUCCESS: #fdea14;
+$WARNING: #f2a297;
+$DANGER: #ca1444;
+$WHITE: #fafafa;
+$BLACK: #111827;
+$GRAY: #f5f5f5;
+
+// screens
+$screen-xs: 480px;
+$screen-sm: 768px;
+$screen-md: 992px;
+$screen-lg: 1200px;
+
+// mixins
+@mixin grid($columns, $rows) {
+  display: grid;
+  grid-template-columns: repeat($columns, 1fr);
+  grid-template-rows: repeat($rows, 1fr);
+}
+
+@mixin title($color, $size) {
+  color: $color;
+  font-size: $size;
+  font-weight: 500;
+}
+
+@mixin button($bgColor, $bgColorHover, $color, $colorHover) {
+  padding: 10px;
+  border-radius: 14px;
+  background-color: $bgColor;
+  color: $color;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  font-family: 'Quicksand';
+  &:hover {
+    background-color: $bgColorHover;
+    color: $colorHover;
+    transition: 0.3s;
+  }
+}
+
+@mixin badge($color, $background) {
+  color: $color;
+  background: $background;
+  display: inline-block;
+  padding: 0.25em 0.4em;
+  font-size: 75%;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: 50%;
+  min-width: 10px;
+  min-height: 10px;
+  text-transform: uppercase;
+  vertical-align: middle;
+  border: 1px solid transparent;
+  transition: color 0.15s ease-in-out,
+  background-color 0.15s ease-in-out,
+  border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
